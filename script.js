@@ -334,8 +334,11 @@
     const note = $("[data-form-note]", form);
     const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    // Número de WhatsApp que recibe las consultas (formato internacional, sin + ni espacios)
+    const WHATSAPP = "5493813399196";
+
     form.addEventListener("submit", (e) => {
-      e.preventDefault();   // no hay backend: mostramos feedback en cliente
+      e.preventDefault();
       let ok = true;
 
       $$("input, textarea", form).forEach((f) => {
@@ -350,7 +353,25 @@
         return;
       }
 
-      note.textContent = "¡Listo! Recibimos tu solicitud. Te contactamos a la brevedad.";
+      // Armamos el mensaje con los datos del formulario
+      const datos = {
+        nombre:   $("#nombre", form).value.trim(),
+        telefono: $("#telefono", form).value.trim(),
+        email:    $("#email", form).value.trim(),
+        mensaje:  $("#mensaje", form).value.trim()
+      };
+
+      const texto =
+        `Hola R-TECH, quiero solicitar un diagnóstico.\n\n` +
+        `*Nombre:* ${datos.nombre}\n` +
+        `*Teléfono:* ${datos.telefono}\n` +
+        `*Email:* ${datos.email}\n` +
+        `*Consulta:* ${datos.mensaje}`;
+
+      // Abrimos WhatsApp con el mensaje ya escrito
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`, "_blank", "noopener");
+
+      note.textContent = "Te abrimos WhatsApp con tu consulta lista. Tocá enviar para que nos llegue.";
       note.className = "form__note is-ok";
       form.reset();
     });
