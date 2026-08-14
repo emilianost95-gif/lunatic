@@ -568,6 +568,23 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.08; font-weigh
 .footer__social a { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: var(--glass); border: 1px solid var(--stroke); font-family: var(--font-data); font-weight: 600; font-size: .8rem; margin: 0; }
 .footer__social a:hover { border-color: rgba(0,212,255,.5); box-shadow: var(--glow-soft); color: var(--celeste); }
 .footer__bottom { border-top: 1px solid var(--stroke-soft); padding: 1.5rem 0; }
+
+/* Firma del desarrollador */
+.signature { display: inline-flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
+.signature__link {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-weight: 600; color: var(--blanco);
+  position: relative; transition: color .3s var(--ease);
+}
+.signature__link svg { opacity: .55; transition: opacity .3s var(--ease), transform .3s var(--ease); }
+.signature__link::after {
+  content: ""; position: absolute; left: 0; bottom: -3px; height: 1px; width: 0;
+  background: var(--grad); transition: width .3s var(--ease);
+}
+.signature__link:hover { color: var(--celeste); }
+.signature__link:hover svg { opacity: 1; transform: translate(1px, -1px); }
+.signature__link:hover::after { width: 100%; }
+.signature__chevron { color: var(--celeste); text-shadow: 0 0 10px var(--celeste); }
 .footer__bottom-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; color: var(--gris); font-family: var(--font-data); font-size: .85rem; }
 
 /* WhatsApp flotante */
