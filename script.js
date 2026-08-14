@@ -329,7 +329,7 @@
   /* ============================================================
      11. FORMULARIO
   ============================================================ */
-  const form = $("[data-form]");
+  const form = $("#contactForm");
   if (form) {
     const note = $("[data-form-note]", form);
     const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

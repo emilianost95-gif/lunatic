@@ -463,6 +463,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.08; font-weigh
 .ba:hover .ba__after, .ba:focus-within .ba__after { opacity: 1; transform: scale(1); }
 .ba:hover .ba__before { opacity: 0; }
 
+/* Tarjetas con foto real (antes/después con imagen de archivo) */
+.ba__face--photo { background-size: cover; background-position: center; }
+.ba__face--photo span, .ba__face--photo small { text-shadow: 0 2px 12px rgba(0,0,0,.55); }
+.ba__before.ba__face--photo span { color: #ffb3b3; }
+.ba__after.ba__face--photo span { color: var(--celeste); }
+
 /* --- FAQ (acordeón) --- */
 .faq { display: flex; flex-direction: column; gap: .9rem; }
 .faq__item { border-radius: var(--r); overflow: hidden; }
