@@ -537,20 +537,33 @@
             <p class="section__lead">Contanos qué le pasa a tu equipo y coordinamos el diagnóstico.</p>
 
             <ul class="contact__list">
-              <li><span>📍</span> Pje Holmberg 2859, San Miguel de Tucumán, Tucumán</li>
+              <li>
+                <span>📍</span>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Pje+Holmberg+2859,+San+Miguel+de+Tucum%C3%A1n,+Tucum%C3%A1n,+Argentina"
+                   target="_blank" rel="noopener noreferrer">Pje Holmberg 2859, San Miguel de Tucumán, Tucumán</a>
+              </li>
               <li><span>🕘</span> Lun a Vie · 09:00 – 21:00</li>
-              <li><span>📞</span> +54 9 3813 399196</li>
-              <li><span>✉️</span> pablo_dkno_18@hotmail.com</li>
+              <li><span>📞</span> <a href="tel:+5493813399196">+54 9 3813 399196</a></li>
+              <li><span>✉️</span> <a href="mailto:pablo_dkno_18@hotmail.com">pablo_dkno_18@hotmail.com</a></li>
             </ul>
 
-            <!-- Mapa ilustrado (placeholder decorativo, sin librerías) -->
-            <div class="map" aria-hidden="true">
-              <div class="map__grid"></div>
-              <div class="map__road map__road--h"></div>
-              <div class="map__road map__road--v"></div>
-              <div class="map__pin"><span></span></div>
-              <div class="map__tag">R-TECH⟩ · Estás acá</div>
+            <!-- Mapa real de Google Maps (embed sin API key) -->
+            <div class="map">
+              <iframe
+                class="map__frame"
+                src="https://www.google.com/maps?q=Pje%20Holmberg%202859%2C%20San%20Miguel%20de%20Tucum%C3%A1n%2C%20Tucum%C3%A1n%2C%20Argentina&amp;z=16&amp;output=embed"
+                title="Ubicación de R-TECH en Pje Holmberg 2859, San Miguel de Tucumán"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
             </div>
+
+            <a class="btn btn--ghost btn--sm map__cta"
+               href="https://www.google.com/maps/dir/?api=1&amp;destination=Pje+Holmberg+2859,+San+Miguel+de+Tucum%C3%A1n,+Tucum%C3%A1n,+Argentina"
+               target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.4-7-11a7 7 0 1 1 14 0c0 4.6-7 11-7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+              Cómo llegar
+            </a>
           </div>
 
           <!-- Formulario elegante -->
